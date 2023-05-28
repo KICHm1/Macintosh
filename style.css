@@ -2,18 +2,22 @@ h2:hover,
 h3:hover,
 h4:hover,
 h5:hover{
-    color:#5467e7;
+    color:#5467e7 !important;
 }
 h2,
 h3,
 h4,
 h5{
+    z-index: 1;
     cursor: pointer;
     display: block;
     transition: color 0.3s ease-in-out;
 }
+*{
+    transition: all 0.3s ease-in-out    ;
+}
 img{
-    cursor: pointer;
+    cursor: pointer !important;
 }
 .button{
     width: 70px;
@@ -249,6 +253,12 @@ section .slide div .first{
     height: 100%;
     position: absolute;
     width: 100%;
+}
+section .slide .slide-first h2:hover{
+    color:white;
+}
+section .slide .second h2:hover{
+    color:black;
 }
 section .slide div #first1{
     z-index: 1 ;
@@ -517,7 +527,15 @@ section #app-montage .montage-content{
 #new-game .action{
     top:60%;
     left:20px;
+    height: 20px;
     position: absolute;
+    border: 0; 
+    color: rgba(128, 128, 128, 0.589); 
+    font-weight: 100;
+    box-shadow: 0 2px 6px -4px gray;
+}
+#new-game .action:hover{
+    color: #fff;
 }
 #new-game .metro h2{
     top:70%;
@@ -618,14 +636,83 @@ section #app-montage .montage-content{
 #bestgame ul li *{
     margin:0 0 20px 0;
 }
-#bestgame ul li img{
+#bestgame ul li .img1{
     width: 100%;
-    object-fit: fill;
+    background: center / 100% 100% no-repeat url('./img/Farm\ together.png');
     height: 200px;
     border-radius: 10px;
+    position: relative;
+}
+#bestgame ul li .img2{
+    width: 100%;
+    background: center / 100% 100% no-repeat url('./img/Pacman.jpg');
+    height: 200px;
+    border-radius: 10px;
+    position: relative;
+}
+#bestgame ul li .img3{
+    width: 100%;
+    background: center / 100% 100% no-repeat url('./img/Euro\ truck.jpg');
+    height: 200px;
+    border-radius: 10px;
+    position: relative;
+}
+#bestgame ul li .bestgame-img i{
+    font-size: 2.3em;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    z-index: -1;
+    transition: all 0.2s ease-in-out;
+   cursor: pointer;
+
+}
+#bestgame ul li .bestgame-img::before{
+   content: "";
+   width: 20%;
+   height: 30%;
+   border-radius: 100%;
+   position: absolute;
+   left:50%;
+   top:50%;
+   transform: translate(-55%,-50%);
+   background: rgba(0, 0, 0,0.8);
+   z-index: -1;
+   transition: all 0.2s ease-in-out;
+   cursor: pointer;
+
+}
+#bestgame ul li .bestgame-img::after{
+   content: "";
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   left:0;
+   top:0;
+   border-radius: 10px;
+   background: rgba(0, 0, 0, 0.396);
+   z-index: -1;
+   transition: all 0.2s ease-in-out;
+   cursor: pointer;
+}
+#bestgame ul li .bestgame-img:hover{
+    
+}
+#bestgame ul li .bestgame-img:hover::after{
+    z-index: 1;
+}
+#bestgame ul li .bestgame-img:hover i,
+#bestgame ul li .bestgame-img:hover::before{
+    z-index: 2;
 }
 #bestgame .name-game{
     font-weight: 700;
+    cursor: pointer;
+}
+#bestgame .name-game:hover{
+    color: #5467e7;
 }
 #bestgame .date-game{
     font-size: 0.75em;
@@ -638,6 +725,9 @@ section #app-montage .montage-content{
     font-weight: 100;
     border:0;
     box-shadow: 0 2px 4px -3px gray ;
+}
+#bestgame .bestgame-content ul li img:hover{
+    background: rgba(0, 0, 0 );
 }
 #bestgame .button:hover{
     color:white;
@@ -657,7 +747,7 @@ footer{
         left: 0 !important ;
     }
     .content{
-        left: 220px !important;
+        left: 0 !important;
     }
     #new-game .metro{
         flex:1 0 50%;
